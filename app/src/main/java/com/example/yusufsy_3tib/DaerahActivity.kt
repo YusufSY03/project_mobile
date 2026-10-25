@@ -1,0 +1,43 @@
+package com.example.yusufsy_3tib
+
+import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import com.example.yusufsy_3tib.databinding.ActivityDaerahBinding
+
+class DaerahActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityDaerahBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        binding = ActivityDaerahBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            binding.toolbarDaerah.setPadding(0, systemBars.top, 0, 0)
+            v.setPadding(systemBars.left, 0, systemBars.right, systemBars.bottom)
+            insets
+        }
+
+        val namaDaerah = intent.getStringExtra("NAMA_DAERAH") ?: "Daftar Destinasi"
+
+        // Set judul dan fungsi tombol kembali secara langsung
+        binding.toolbarDaerah.title = namaDaerah
+        binding.toolbarDaerah.setNavigationOnClickListener {
+            finish()
+        }
+
+        val destinasiDaerah = listOf(
+            DestinasiModel("Jam Gadang", "Ikon kota Bukittinggi...", R.drawable.jam_gadang),
+            DestinasiModel("Ngarai Sianok", "Lembah curam...", R.drawable.ngarai_sianok),
+            DestinasiModel("Lobang Jepang", "Terowongan peninggalan...", R.drawable.lubang_jepang)
+        )
+
+        val adapter = DestinasiAdapter(this, destinasiDaerah)
+        binding.listViewDaerah.adapter = adapter
+    }
+}

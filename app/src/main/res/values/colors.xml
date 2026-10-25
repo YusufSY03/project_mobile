@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="button">#FF2E6B4A</color>
+    <color name="nature_lake_blue">#FF2F6F8F</color>
+    <color name="nature_terracotta">#FFB5533C</color>
+    <color name="nature_cream_card">#E6F7F3E8</color>
+    <color name="nature_text_dark">#FF1F2D24</color>
+    <color name="nature_text_hint">#FF56625A</color>
+    <color name="text_shadow">#FF000000</color>
+</resources>

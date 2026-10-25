@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Jelajah Nusantara</string>
+
+    <!-- Teks Halaman Login -->
+    <string name="greeting_user">Halo, %s!</string>
+    <string name="title_login">Selamat Datang</string>
+    <string name="hint_username">Masukkan Username</string>
+    <string name="hint_password">Masukkan Password</string>
+    <string name="btn_login">Login</string>
+
+    <!-- Teks Halaman Main & Detail (Untuk langkah selanjutnya) -->
+    <string name="btn_lihat_detail">Lihat Detail</string>
+    <string name="btn_logout">Log Out</string>
+    <string name="btn_kembali">Kembali</string>
+    <string name="title_destinasi">Kawasan Wisata Mandeh</string>
+    <string name="desc_singkat">Mandeh merupakan kawasan wisata bahari yang memukau dengan gugusan pulau-pulau kecil, sering dijuluki sebagai Raja Ampat-nya Sumatera.</string>
+
+    <!-- Teks Dialog Alert -->
+    <string name="dialog_logout_title">Konfirmasi Log Out</string>
+    <string name="dialog_logout_msg">Apakah Anda yakin ingin melakukan Log Out?</string>
+    <string name="dialog_ya">Ya</string>
+    <string name="dialog_tidak">Tidak</string>
+</resources>

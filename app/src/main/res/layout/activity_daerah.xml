@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:background="#F7F3E8" android:layout_height="match_parent" android:layout_width="match_parent" android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarDaerah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/button"
+        app:titleTextColor="@color/white"
+        app:navigationIcon="@drawable/abc_ic_ab_back_material"
+        app:navigationIconTint="@color/white" />
+
+    <ListView android:id="@+id/listViewDaerah" android:layout_height="match_parent" android:layout_width="match_parent"/>
+
+</LinearLayout>
