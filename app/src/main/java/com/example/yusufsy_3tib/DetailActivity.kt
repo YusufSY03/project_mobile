@@ -5,7 +5,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.bumptech.glide.Glide
 import com.example.yusufsy_3tib.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
@@ -25,15 +24,15 @@ class DetailActivity : AppCompatActivity() {
             insets
         }
 
-        // Setup Toolbar dan fungsi tombol Back secara langsung
-        binding.toolbarDetail.title = "Detail Destinasi"
+        // Setup Toolbar dan fungsi tombol Back secara langsung (String Resource)
+        binding.toolbarDetail.title = getString(R.string.title_detail_destinasi)
         binding.toolbarDetail.setNavigationOnClickListener {
             finish() // Menutup halaman ini dan kembali ke halaman sebelumnya
         }
 
-        // Menangkap data dari Intent
-        val nama = intent.getStringExtra("EXTRA_NAMA") ?: "Destinasi Wisata"
-        val deskripsi = intent.getStringExtra("EXTRA_DESKRIPSI") ?: "Deskripsi tidak tersedia."
+        // Menangkap data dari Intent (String Resource Fallback)
+        val nama = intent.getStringExtra("EXTRA_NAMA") ?: getString(R.string.default_destinasi_wisata)
+        val deskripsi = intent.getStringExtra("EXTRA_DESKRIPSI") ?: getString(R.string.default_deskripsi_kosong)
         val imageResId = intent.getIntExtra("EXTRA_GAMBAR", 0)
 
         // Memasang data ke komponen UI

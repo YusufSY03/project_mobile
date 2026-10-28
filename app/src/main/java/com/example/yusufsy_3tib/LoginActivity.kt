@@ -30,7 +30,6 @@ class LoginActivity : AppCompatActivity() {
             val pass = binding.edtPassword.text.toString()
 
             if (user.isNotEmpty() && user == pass) {
-                // KITA PANGGIL LAGI sharedPref DI SINI
                 val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
 
                 // Simpan isLogin dan username ke SharedPreferences
@@ -44,9 +43,9 @@ class LoginActivity : AppCompatActivity() {
                 finish()
             } else {
                 AlertDialog.Builder(this)
-                    .setTitle("Login Gagal")
-                    .setMessage("Silahkan coba lagi")
-                    .setPositiveButton("OK") { dialog, _ ->
+                    .setTitle(R.string.dialog_login_failed_title)
+                    .setMessage(R.string.dialog_login_failed_msg)
+                    .setPositiveButton(R.string.dialog_ok) { dialog, _ ->
                         dialog.dismiss()
                     }
                     .show()

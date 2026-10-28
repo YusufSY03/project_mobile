@@ -1,24 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Jelajah Nusantara</string>
+    <!-- Nama Aplikasi Sesuai Grand Design -->
+    <string name="app_name">Jelajah Ranah Minang</string>
 
-    <!-- Teks Halaman Login -->
+    <!-- Sapaan User (Modul P7 Latihan 5.1) -->
     <string name="greeting_user">Halo, %s!</string>
+    <string name="default_username">Pengguna</string>
+
+    <!-- Halaman Login -->
     <string name="title_login">Selamat Datang</string>
     <string name="hint_username">Masukkan Username</string>
     <string name="hint_password">Masukkan Password</string>
     <string name="btn_login">Login</string>
+    <string name="dialog_login_failed_title">Login Gagal</string>
+    <string name="dialog_login_failed_msg">Silahkan coba lagi</string>
+    <string name="dialog_ok">OK</string>
 
-    <!-- Teks Halaman Main & Detail (Untuk langkah selanjutnya) -->
+    <!-- Navigasi Bawah (Bottom Navigation) -->
+    <string name="menu_beranda">Beranda</string>
+    <string name="menu_wishlist">Wishlist</string>
+    <string name="menu_profil">Profil</string>
+
+    <!-- Halaman Beranda -->
+    <string name="title_pilih_daerah">Pilih Daerah</string>
+    <string name="subtitle_pilih_daerah">Temukan destinasi wisata di Sumatera Barat</string>
+    <string name="daerah_bukittinggi">Bukittinggi</string>
+    <string name="sub_bukittinggi">Jam Gadang &amp; Ngarai Sianok</string>
+    <string name="daerah_lima_puluh_kota">Kab. Lima Puluh Kota</string>
+    <string name="sub_lima_puluh_kota">Lembah Harau &amp; Kelok 9</string>
+    <string name="label_daerah_lainnya">DAERAH LAINNYA</string>
+    <string name="card_dummy_padang">Kota Padang (Segera Hadir)</string>
+
+    <!-- Halaman Wishlist & Profil -->
+    <string name="title_wishlist">Wishlist Tersimpan</string>
+    <string name="title_profil">Profil Pengguna</string>
+    <string name="toast_open_menu">Membuka %s</string>
+
+    <!-- Halaman Detail Destinasi -->
+    <string name="title_detail_destinasi">Detail Destinasi</string>
+    <string name="default_daftar_destinasi">Daftar Destinasi</string>
+    <string name="default_destinasi_wisata">Destinasi Wisata</string>
+    <string name="default_deskripsi_kosong">Deskripsi tidak tersedia.</string>
+
+    <!-- Tombol & Dialog Aksi -->
     <string name="btn_lihat_detail">Lihat Detail</string>
     <string name="btn_logout">Log Out</string>
     <string name="btn_kembali">Kembali</string>
-    <string name="title_destinasi">Kawasan Wisata Mandeh</string>
-    <string name="desc_singkat">Mandeh merupakan kawasan wisata bahari yang memukau dengan gugusan pulau-pulau kecil, sering dijuluki sebagai Raja Ampat-nya Sumatera.</string>
-
-    <!-- Teks Dialog Alert -->
     <string name="dialog_logout_title">Konfirmasi Log Out</string>
     <string name="dialog_logout_msg">Apakah Anda yakin ingin melakukan Log Out?</string>
     <string name="dialog_ya">Ya</string>
     <string name="dialog_tidak">Tidak</string>
+
+    <!-- Aksesibilitas -->
+    <string name="cd_logo">Logo Aplikasi</string>
 </resources>

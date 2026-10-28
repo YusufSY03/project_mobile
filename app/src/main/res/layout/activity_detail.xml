@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F7F3E8">
+    android:background="@color/cream_background">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarDetail"
@@ -12,7 +12,7 @@
         android:minHeight="?attr/actionBarSize"
         android:background="@color/button"
         app:titleTextColor="@color/white"
-        app:navigationIcon="@drawable/abc_ic_ab_back_material"
+        app:navigationIcon="@drawable/ic_arrow_back"
         app:navigationIconTint="@color/white"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,6 +20,7 @@
         android:id="@+id/imgDetail"
         android:layout_width="match_parent"
         android:layout_height="250dp"
+        android:contentDescription="@string/default_destinasi_wisata"
         android:scaleType="centerCrop"
         app:layout_constraintTop_toBottomOf="@id/toolbarDetail" />
 

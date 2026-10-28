@@ -1,5 +1,6 @@
 package com.example.yusufsy_3tib
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -23,6 +24,11 @@ class BerandaFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Menampilkan sapaan user dari SharedPreferences (Wajib Modul P7 Latihan 5.1)
+        val sharedPref = requireContext().getSharedPreferences("user_pref", Context.MODE_PRIVATE)
+        val username = sharedPref.getString("username", "Pengguna") ?: "Pengguna"
+        binding.tvGreeting.text = getString(R.string.greeting_user, username)
+
         // Arahkan klik kartu Bukittinggi ke DaerahActivity
         binding.cardBukittinggi.setOnClickListener {
             val intent = Intent(requireContext(), DaerahActivity::class.java)
@@ -30,15 +36,12 @@ class BerandaFragment : Fragment() {
             startActivity(intent)
         }
 
-        // Catatan: Jika kartu Kab. Lima Puluh Kota sudah kamu beri id (misal: cardLimaPuluh)
-        // di file fragment_beranda.xml, kamu bisa gunakan kode di bawah ini:
-        /*
+        // Arahkan klik kartu Kab. Lima Puluh Kota ke DaerahActivity
         binding.cardLimaPuluh.setOnClickListener {
             val intent = Intent(requireContext(), DaerahActivity::class.java)
             intent.putExtra("NAMA_DAERAH", "Kab. Lima Puluh Kota")
             startActivity(intent)
         }
-        */
     }
 
     override fun onDestroyView() {

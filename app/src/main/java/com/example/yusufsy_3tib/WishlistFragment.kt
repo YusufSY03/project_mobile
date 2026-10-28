@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.yusufsy_3tib.databinding.FragmentWishlistBinding
 
@@ -12,12 +11,28 @@ class WishlistFragment : Fragment() {
     private var _binding: FragmentWishlistBinding? = null
     private val binding get() = _binding!!
 
-    // Data List dengan URL Gambar yang stabil
+    // Data Destinasi Wishlist dengan deskripsi informatif dan gambar lokal
     private val destinasiList = listOf(
-        DestinasiModel("Jam Gadang", "Ikon kota Bukittinggi...", R.drawable.jam_gadang),
-        DestinasiModel("Kawasan Mandeh", "Gugusan pulau memukau...", R.drawable.mandeh1),
-        DestinasiModel("Lembah Harau", "Lembah subur...", R.drawable.lembah_harau),
-        DestinasiModel("Istano Basa", "Istana replika...", R.drawable.pagaruyuang)
+        DestinasiModel(
+            "Jam Gadang",
+            "Ikon sejarah dan landmark utama Kota Bukittinggi yang dibangun pada masa kolonial dengan atap khas rumah gadang Minangkabau.",
+            R.drawable.jam_gadang
+        ),
+        DestinasiModel(
+            "Kawasan Wisata Mandeh",
+            "Gugusan pulau eksotis di pesisir selatan dengan perairan jernih nan tenang, sering dijuluki surga bahari Raja Ampat-nya Sumatera Barat.",
+            R.drawable.mandeh1
+        ),
+        DestinasiModel(
+            "Lembah Harau",
+            "Ngarai subur yang diapit oleh tebing-tebing batu granit terjal setinggi ratusan meter dengan air terjun alami dan keindahan alam yang memukau di Kabupaten Lima Puluh Kota.",
+            R.drawable.lembah_harau
+        ),
+        DestinasiModel(
+            "Istano Basa Pagaruyuang",
+            "Kemegahan istana replika kebanggaan suku Minangkabau dengan arsitektur rumah gadang khas di Batusangkar.",
+            R.drawable.pagaruyuang
+        )
     )
 
     override fun onCreateView(
@@ -31,9 +46,7 @@ class WishlistFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
-        (requireActivity() as AppCompatActivity).supportActionBar?.setDisplayShowTitleEnabled(false)
-
+        // Penyeragaman: Toolbar diperlakukan mandiri tanpa setSupportActionBar
         val adapter = DestinasiAdapter(requireContext(), destinasiList)
         binding.listViewDestinasi.adapter = adapter
     }

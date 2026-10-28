@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F7F3E8">
+    android:background="@color/cream_background">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/merriweatherextrabold"
-            android:text="Pilih Daerah"
+            android:text="@string/title_pilih_daerah"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -37,10 +37,21 @@
             android:orientation="vertical"
             android:padding="24dp">
 
+            <!-- Sapaan Pengguna (Wajib Modul P7 Latihan 5.1) -->
+            <TextView
+                android:id="@+id/tvGreeting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/greeting_user"
+                android:textColor="@color/nature_lake_blue"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pilih Daerah"
+                android:layout_marginTop="4dp"
+                android:text="@string/title_pilih_daerah"
                 android:textColor="@color/nature_text_dark"
                 android:textSize="28sp"
                 android:textStyle="bold" />
@@ -50,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="24dp"
-                android:text="Temukan destinasi wisata di Sumatera Barat"
+                android:text="@string/subtitle_pilih_daerah"
                 android:textColor="@color/nature_text_hint"
                 android:textSize="14sp" />
 
@@ -73,7 +84,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Bukittinggi"
+                        android:text="@string/daerah_bukittinggi"
                         android:textColor="@color/white"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -82,14 +93,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Jam Gadang &amp; Ngarai Sianok"
-                        android:textColor="#E0E0E0"
+                        android:text="@string/sub_bukittinggi"
+                        android:textColor="@color/gray_light"
                         android:textSize="14sp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
             <!-- Card Kab Lima Puluh Kota -->
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardLimaPuluh"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -106,7 +118,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Kab. Lima Puluh Kota"
+                        android:text="@string/daerah_lima_puluh_kota"
                         android:textColor="@color/white"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -115,8 +127,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Lembah Harau &amp; Kelok 9"
-                        android:textColor="#E0E0E0"
+                        android:text="@string/sub_lima_puluh_kota"
+                        android:textColor="@color/gray_light"
                         android:textSize="14sp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -126,7 +138,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="8dp"
-                android:text="DAERAH LAINNYA"
+                android:text="@string/label_daerah_lainnya"
                 android:textColor="@color/nature_text_hint"
                 android:textSize="12sp"
                 android:textStyle="bold" />
@@ -135,7 +147,7 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="#E0E0E0"
+                app:cardBackgroundColor="@color/gray_light"
                 app:cardCornerRadius="20dp"
                 app:strokeWidth="0dp">
 
@@ -143,8 +155,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="20dp"
-                    android:text="Kota Padang (Segera Hadir)"
-                    android:textColor="#9E9E9E"
+                    android:text="@string/card_dummy_padang"
+                    android:textColor="@color/gray_text_disabled"
                     android:textSize="16sp"
                     android:textStyle="bold" />
             </com.google.android.material.card.MaterialCardView>

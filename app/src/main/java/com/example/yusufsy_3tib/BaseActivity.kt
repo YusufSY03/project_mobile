@@ -15,7 +15,7 @@ class BaseActivity : AppCompatActivity() {
         binding = ActivityBaseBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
             insets
@@ -31,7 +31,7 @@ class BaseActivity : AppCompatActivity() {
                     replaceFragment(BerandaFragment())
                     true
                 }
-                R.id.nav_destinasi -> {
+                R.id.nav_wishlist -> {
                     replaceFragment(WishlistFragment())
                     true
                 }

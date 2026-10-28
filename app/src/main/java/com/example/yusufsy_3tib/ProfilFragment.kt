@@ -44,12 +44,12 @@ class ProfilFragment : Fragment() {
         )
         binding.listViewProfil.adapter = adapter
 
-        // Aksi saat item Simple ListView diklik
+        // Aksi saat item Simple ListView diklik (String resource)
         binding.listViewProfil.setOnItemClickListener { _, _, position, _ ->
             val selectedItem = listMenuProfil[position]
             Toast.makeText(
                 requireContext(),
-                "Membuka ${selectedItem["title"]}",
+                getString(R.string.toast_open_menu, selectedItem["title"]),
                 Toast.LENGTH_SHORT
             ).show()
         }

@@ -5,15 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F7F3E8"
+    android:background="@color/cream_background"
     tools:context=".SplashScreenActivity">
-    <!-- Kode #F7F3E8 adalah kode warna krem yang cocok dengan logomu -->
 
     <ImageView
         android:id="@+id/ivLogo"
         android:layout_width="160dp"
         android:layout_height="160dp"
-        android:contentDescription="Logo Aplikasi"
+        android:contentDescription="@string/cd_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
