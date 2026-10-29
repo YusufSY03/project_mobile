@@ -24,9 +24,10 @@ class BerandaFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Menampilkan sapaan user dari SharedPreferences (Wajib Modul P7 Latihan 5.1)
+        // Menampilkan sapaan user dari SharedPreferences (Memakai default_username dari strings.xml)
+        val defaultUser = getString(R.string.default_username)
         val sharedPref = requireContext().getSharedPreferences("user_pref", Context.MODE_PRIVATE)
-        val username = sharedPref.getString("username", "Pengguna") ?: "Pengguna"
+        val username = sharedPref.getString("username", defaultUser) ?: defaultUser
         binding.tvGreeting.text = getString(R.string.greeting_user, username)
 
         // Arahkan klik kartu Bukittinggi ke DaerahActivity

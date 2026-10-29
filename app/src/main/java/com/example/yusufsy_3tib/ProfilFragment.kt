@@ -27,11 +27,20 @@ class ProfilFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Data untuk Simple ListView (Menu Profil)
+        // Data untuk Simple ListView (Menu Profil mengambil string dari strings.xml)
         val listMenuProfil = listOf(
-            mapOf("title" to "Pusat Bantuan", "desc" to "Panduan dan solusi masalah"),
-            mapOf("title" to "Tentang Aplikasi", "desc" to "Versi aplikasi Jelajah Ranah V1.0"),
-            mapOf("title" to "Syarat & Ketentuan", "desc" to "Kebijakan privasi pengguna")
+            mapOf(
+                "title" to getString(R.string.menu_bantuan_title),
+                "desc" to getString(R.string.menu_bantuan_desc)
+            ),
+            mapOf(
+                "title" to getString(R.string.menu_tentang_title),
+                "desc" to getString(R.string.menu_tentang_desc)
+            ),
+            mapOf(
+                "title" to getString(R.string.menu_syarat_title),
+                "desc" to getString(R.string.menu_syarat_desc)
+            )
         )
 
         // Memasang SimpleAdapter sesuai modul

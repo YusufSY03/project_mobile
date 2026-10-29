@@ -36,6 +36,14 @@
     <string name="title_profil">Profil Pengguna</string>
     <string name="toast_open_menu">Membuka %s</string>
 
+    <!-- Menu SimpleAdapter ProfilFragment (Part B) -->
+    <string name="menu_bantuan_title">Pusat Bantuan</string>
+    <string name="menu_bantuan_desc">Panduan dan solusi masalah</string>
+    <string name="menu_tentang_title">Tentang Aplikasi</string>
+    <string name="menu_tentang_desc">Versi aplikasi Jelajah Ranah Minang V1.0</string>
+    <string name="menu_syarat_title">Syarat &amp; Ketentuan</string>
+    <string name="menu_syarat_desc">Kebijakan privasi pengguna</string>
+
     <!-- Halaman Detail Destinasi -->
     <string name="title_detail_destinasi">Detail Destinasi</string>
     <string name="default_daftar_destinasi">Daftar Destinasi</string>
