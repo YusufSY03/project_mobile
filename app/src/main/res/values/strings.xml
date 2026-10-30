@@ -3,7 +3,7 @@
     <!-- Nama Aplikasi Sesuai Grand Design -->
     <string name="app_name">Jelajah Ranah Minang</string>
 
-    <!-- Sapaan User (Modul P7 Latihan 5.1) -->
+    <!-- Sapaan User-->
     <string name="greeting_user">Halo, %s!</string>
     <string name="default_username">Pengguna</string>
 
@@ -28,6 +28,8 @@
     <string name="sub_bukittinggi">Jam Gadang &amp; Ngarai Sianok</string>
     <string name="daerah_lima_puluh_kota">Kab. Lima Puluh Kota</string>
     <string name="sub_lima_puluh_kota">Lembah Harau &amp; Kelok 9</string>
+    <string name="daerah_tanah_datar">Kab. Tanah Datar</string>
+    <string name="daerah_pesisir_selatan">Kab. Pesisir Selatan</string>
     <string name="label_daerah_lainnya">DAERAH LAINNYA</string>
     <string name="card_dummy_padang">Kota Padang (Segera Hadir)</string>
 
@@ -36,7 +38,13 @@
     <string name="title_profil">Profil Pengguna</string>
     <string name="toast_open_menu">Membuka %s</string>
 
-    <!-- Menu SimpleAdapter ProfilFragment (Part B) -->
+    <!-- Teks Chip Filter Kategori (Part B) -->
+    <string name="chip_semua">Semua</string>
+    <string name="chip_alam">Alam</string>
+    <string name="chip_sejarah">Sejarah</string>
+    <string name="chip_budaya">Budaya</string>
+
+    <!-- Menu SimpleAdapter ProfilFragment -->
     <string name="menu_bantuan_title">Pusat Bantuan</string>
     <string name="menu_bantuan_desc">Panduan dan solusi masalah</string>
     <string name="menu_tentang_title">Tentang Aplikasi</string>
@@ -58,6 +66,16 @@
     <string name="dialog_logout_msg">Apakah Anda yakin ingin melakukan Log Out?</string>
     <string name="dialog_ya">Ya</string>
     <string name="dialog_tidak">Tidak</string>
+
+    <!-- Halaman Tutorial Onboarding (Part C) -->
+    <string name="tutorial_title_1">Pilih Daerah Wisata</string>
+    <string name="tutorial_desc_1">Ketuk salah satu daerah di Beranda untuk melihat destinasi viralnya.</string>
+    <string name="tutorial_title_2">Lihat Detail Destinasi</string>
+    <string name="tutorial_desc_2">Ketuk destinasi untuk melihat foto dan deskripsi lengkapnya.</string>
+    <string name="tutorial_title_3">Wishlist dan Profil</string>
+    <string name="tutorial_desc_3">Lihat daftar destinasi pilihan di Wishlist, dan kelola akunmu di Profil.</string>
+    <string name="btn_lewati">Lewati</string>
+    <string name="btn_mulai">Mulai</string>
 
     <!-- Aksesibilitas -->
     <string name="cd_logo">Logo Aplikasi</string>

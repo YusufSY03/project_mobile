@@ -10,6 +10,7 @@ import android.widget.SimpleAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.yusufsy_3tib.databinding.FragmentProfilBinding
+import com.example.yusufsy_3tib.tutorial.TutorialActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class ProfilFragment : Fragment() {
@@ -53,14 +54,21 @@ class ProfilFragment : Fragment() {
         )
         binding.listViewProfil.adapter = adapter
 
-        // Aksi saat item Simple ListView diklik (String resource)
+        // Aksi saat item Simple ListView diklik
         binding.listViewProfil.setOnItemClickListener { _, _, position, _ ->
-            val selectedItem = listMenuProfil[position]
-            Toast.makeText(
-                requireContext(),
-                getString(R.string.toast_open_menu, selectedItem["title"]),
-                Toast.LENGTH_SHORT
-            ).show()
+            if (position == 0) {
+                // Item 0: "Pusat Bantuan" -> Membuka ulang TutorialActivity (onboarding)
+                val intent = Intent(requireContext(), TutorialActivity::class.java)
+                intent.putExtra("DARI_AWAL", false)
+                startActivity(intent)
+            } else {
+                val selectedItem = listMenuProfil[position]
+                Toast.makeText(
+                    requireContext(),
+                    getString(R.string.toast_open_menu, selectedItem["title"]),
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
 
         // Logika Tombol Log Out

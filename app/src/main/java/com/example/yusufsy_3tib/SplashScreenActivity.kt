@@ -1,5 +1,6 @@
 package com.example.yusufsy_3tib
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -7,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
+import com.example.yusufsy_3tib.tutorial.TutorialActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -22,19 +24,37 @@ class SplashScreenActivity : AppCompatActivity() {
             insets
         }
 
-        // --- Logika Splash Screen (Modul Tahap 3) ---
+        // --- Logika Splash Screen 3 Kondisi (Modul Tahap 3 + Onboarding) ---
         lifecycleScope.launch {
-            delay(2000) // Tahan layar 2 detik
+            delay(2000) // Tahan layar splash 2 detik
 
-            // Cek status login dari SharedPreferences
-            val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
-            val isLogin = sharedPref.getBoolean("isLogin", false)
+            // 1. Cek status login dari SharedPreferences user_pref
+            val userPref = getSharedPreferences("user_pref", Context.MODE_PRIVATE)
+            val isLogin = userPref.getBoolean("isLogin", false)
 
-            // Tentukan halaman tujuan
-            val target = if (isLogin) BaseActivity::class.java else LoginActivity::class.java
+            // 2. Cek status tutorial dari SharedPreferences app_pref
+            val appPref = getSharedPreferences("app_pref", Context.MODE_PRIVATE)
+            val tutorialSeen = appPref.getBoolean("tutorial_seen", false)
 
-            // Pindah halaman lalu tutup Splash Screen
-            startActivity(Intent(this@SplashScreenActivity, target))
+            // 3. Tentukan halaman tujuan berdasarkan kondisi
+            val intent = when {
+                isLogin -> {
+                    // Jika sudah login, langsung ke halaman utama BaseActivity
+                    Intent(this@SplashScreenActivity, BaseActivity::class.java)
+                }
+                !tutorialSeen -> {
+                    // Jika belum login dan belum pernah lihat tutorial, buka TutorialActivity dari awal
+                    Intent(this@SplashScreenActivity, TutorialActivity::class.java).apply {
+                        putExtra("DARI_AWAL", true)
+                    }
+                }
+                else -> {
+                    // Jika sudah pernah melihat tutorial tapi belum login, langsung ke LoginActivity
+                    Intent(this@SplashScreenActivity, LoginActivity::class.java)
+                }
+            }
+
+            startActivity(intent)
             finish()
         }
     }

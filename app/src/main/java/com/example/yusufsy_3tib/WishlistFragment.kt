@@ -22,9 +22,23 @@ class WishlistFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Memasang data wishlist langsung dari DestinasiData.kt
-        val adapter = DestinasiAdapter(requireContext(), daftarWishlist)
-        binding.listViewDestinasi.adapter = adapter
+        // Tampilan awal: tampilkan semua destinasi wishlist
+        binding.listViewDestinasi.adapter = DestinasiAdapter(requireContext(), daftarWishlist)
+
+        // Filter kategori menggunakan ChipGroup
+        binding.chipGroupKategori.setOnCheckedStateChangeListener { _, checkedIds ->
+            val selectedId = checkedIds.firstOrNull()
+
+            val hasilFilter = when (selectedId) {
+                R.id.chipAlam -> daftarWishlist.filter { it.kategori == "Alam" }
+                R.id.chipSejarah -> daftarWishlist.filter { it.kategori == "Sejarah" }
+                R.id.chipBudaya -> daftarWishlist.filter { it.kategori == "Budaya" }
+                else -> daftarWishlist
+            }
+
+            // Pasang adapter baru dengan data hasil saringan
+            binding.listViewDestinasi.adapter = DestinasiAdapter(requireContext(), hasilFilter)
+        }
     }
 
     override fun onDestroyView() {

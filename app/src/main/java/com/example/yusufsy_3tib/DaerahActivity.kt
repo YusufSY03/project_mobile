@@ -32,12 +32,8 @@ class DaerahActivity : AppCompatActivity() {
             finish()
         }
 
-        // Menentukan list data berdasarkan nama daerah dari DestinasiData.kt
-        val destinasiDaerah = when (namaDaerah) {
-            "Kab. Lima Puluh Kota" -> daftarLimaPuluhKota
-            "Bukittinggi" -> daftarBukittinggi
-            else -> daftarDefault
-        }
+        // Mengambil list destinasi dari dataDaerah (Map) di DestinasiData.kt
+        val destinasiDaerah = dataDaerah[namaDaerah] ?: emptyList()
 
         val adapter = DestinasiAdapter(this, destinasiDaerah)
         binding.listViewDaerah.adapter = adapter

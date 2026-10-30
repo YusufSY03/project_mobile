@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="360dp"
+    android:height="130dp"
+    android:viewportWidth="360"
+    android:viewportHeight="130">
+
+    <!-- Layer 1: Gelombang aksen transparan untuk efek kedalaman / dimensi -->
+    <path
+        android:fillColor="@color/button"
+        android:fillAlpha="0.3"
+        android:pathData="M0,0 L360,0 L360,105 C290,132 215,130 160,115 C105,100 50,112 0,125 Z" />
+
+    <!-- Layer 2: Gelombang utama solid yang melindungi posisi teks judul -->
+    <path
+        android:fillColor="@color/button"
+        android:pathData="M0,0 L360,0 L360,85 C300,115 230,120 180,105 C130,90 60,75 0,90 Z" />
+
+</vector>

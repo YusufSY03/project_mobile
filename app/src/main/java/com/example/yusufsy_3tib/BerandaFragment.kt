@@ -30,17 +30,28 @@ class BerandaFragment : Fragment() {
         val username = sharedPref.getString("username", defaultUser) ?: defaultUser
         binding.tvGreeting.text = getString(R.string.greeting_user, username)
 
-        // Arahkan klik kartu Bukittinggi ke DaerahActivity
+        // Navigasi klik kartu daerah ke DaerahActivity
         binding.cardBukittinggi.setOnClickListener {
             val intent = Intent(requireContext(), DaerahActivity::class.java)
             intent.putExtra("NAMA_DAERAH", "Bukittinggi")
             startActivity(intent)
         }
 
-        // Arahkan klik kartu Kab. Lima Puluh Kota ke DaerahActivity
         binding.cardLimaPuluh.setOnClickListener {
             val intent = Intent(requireContext(), DaerahActivity::class.java)
             intent.putExtra("NAMA_DAERAH", "Kab. Lima Puluh Kota")
+            startActivity(intent)
+        }
+
+        binding.cardTanahDatar.setOnClickListener {
+            val intent = Intent(requireContext(), DaerahActivity::class.java)
+            intent.putExtra("NAMA_DAERAH", "Kab. Tanah Datar")
+            startActivity(intent)
+        }
+
+        binding.cardPesisirSelatan.setOnClickListener {
+            val intent = Intent(requireContext(), DaerahActivity::class.java)
+            intent.putExtra("NAMA_DAERAH", "Kab. Pesisir Selatan")
             startActivity(intent)
         }
     }

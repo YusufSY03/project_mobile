@@ -5,11 +5,22 @@
     android:layout_height="match_parent"
     android:background="@color/cream_background">
 
+    <!-- Header Gelombang -->
+    <View
+        android:id="@+id/viewHeader"
+        android:layout_width="match_parent"
+        android:layout_height="115dp"
+        android:background="@drawable/bg_header_wave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Toolbar Transparan di atas Header -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/button"
+        android:background="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -19,24 +30,28 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/merriweatherextrabold"
-            android:text="@string/app_name"            android:textColor="@color/white"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
     </androidx.appcompat.widget.Toolbar>
 
+    <!-- Konten Scrollable -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewHeader">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="24dp">
+            android:padding="20dp">
 
-            <!-- Sapaan Pengguna (Wajib Modul P7 Latihan 5.1) -->
+            <!-- Sapaan Pengguna -->
             <TextView
                 android:id="@+id/tvGreeting"
                 android:layout_width="wrap_content"
@@ -52,86 +67,180 @@
                 android:layout_marginTop="4dp"
                 android:text="@string/title_pilih_daerah"
                 android:textColor="@color/nature_text_dark"
-                android:textSize="28sp"
+                android:textSize="26sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:layout_marginBottom="24dp"
+                android:layout_marginBottom="16dp"
                 android:text="@string/subtitle_pilih_daerah"
                 android:textColor="@color/nature_text_hint"
                 android:textSize="14sp" />
 
-            <!-- Card Bukittinggi -->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardBukittinggi"
+            <!-- Grid 2 Kolom untuk Kartu Daerah -->
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/gridLayoutDaerah"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardBackgroundColor="@color/nature_lake_blue"
-                app:cardCornerRadius="20dp"
-                app:strokeWidth="0dp">
+                app:columnCount="2">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <!-- 1. Bukittinggi -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardBukittinggi"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="20dp">
+                    android:layout_margin="6dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill_horizontal"
+                    app:strokeWidth="0dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/daerah_bukittinggi"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/sub_bukittinggi"
-                        android:textColor="@color/gray_light"
-                        android:textSize="14sp" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+                        <ImageView
+                            android:id="@+id/imgBukittinggi"
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp"
+                            android:contentDescription="@string/daerah_bukittinggi"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/jam_gadang" />
 
-            <!-- Card Kab Lima Puluh Kota -->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardLimaPuluh"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardBackgroundColor="@color/nature_lake_blue"
-                app:cardCornerRadius="20dp"
-                app:strokeWidth="0dp">
+                        <TextView
+                            android:id="@+id/tvBukittinggi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="12dp"
+                            android:text="@string/daerah_bukittinggi"
+                            android:textColor="@color/nature_text_dark"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <!-- 2. Kab. Lima Puluh Kota -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardLimaPuluh"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="20dp">
+                    android:layout_margin="6dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill_horizontal"
+                    app:strokeWidth="0dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/daerah_lima_puluh_kota"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                        <ImageView
+                            android:id="@+id/imgLimaPuluh"
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp"
+                            android:contentDescription="@string/daerah_lima_puluh_kota"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/lembah_harau" />
+
+                        <TextView
+                            android:id="@+id/tvLimaPuluh"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="12dp"
+                            android:text="@string/daerah_lima_puluh_kota"
+                            android:textColor="@color/nature_text_dark"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- 3. Kab. Tanah Datar -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardTanahDatar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill_horizontal"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/sub_lima_puluh_kota"
-                        android:textColor="@color/gray_light"
-                        android:textSize="14sp" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+                        android:orientation="vertical">
 
+                        <ImageView
+                            android:id="@+id/imgTanahDatar"
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp"
+                            android:contentDescription="@string/daerah_tanah_datar"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/pagaruyuang" />
+
+                        <TextView
+                            android:id="@+id/tvTanahDatar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="12dp"
+                            android:text="@string/daerah_tanah_datar"
+                            android:textColor="@color/nature_text_dark"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- 4. Kab. Pesisir Selatan -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardPesisirSelatan"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="2dp"
+                    app:layout_columnWeight="1"
+                    app:layout_gravity="fill_horizontal"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgPesisirSelatan"
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp"
+                            android:contentDescription="@string/daerah_pesisir_selatan"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/mandeh1" />
+
+                        <TextView
+                            android:id="@+id/tvPesisirSelatan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="12dp"
+                            android:text="@string/daerah_pesisir_selatan"
+                            android:textColor="@color/nature_text_dark"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.gridlayout.widget.GridLayout>
+
+            <!-- Daerah Lainnya (Coming Soon) -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -142,12 +251,11 @@
                 android:textSize="12sp"
                 android:textStyle="bold" />
 
-            <!-- Card Dummy -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardBackgroundColor="@color/gray_light"
-                app:cardCornerRadius="20dp"
+                app:cardCornerRadius="16dp"
                 app:strokeWidth="0dp">
 
                 <TextView
@@ -159,6 +267,7 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
             </com.google.android.material.card.MaterialCardView>
+
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
