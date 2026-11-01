@@ -32,11 +32,8 @@ class TutorialActivity : AppCompatActivity() {
             Tutorial3Fragment()
         )
 
-        // Pasang adapter ke ViewPager2
         val adapter = TutorialFragmentAdapter(this, fragments)
         binding.tutorialViewPager.adapter = adapter
-
-        // Hubungkan DotsIndicator ke ViewPager2 (wajib dipanggil setelah adapter terpasang)
         binding.dotIndicator.attachTo(binding.tutorialViewPager)
     }
 
