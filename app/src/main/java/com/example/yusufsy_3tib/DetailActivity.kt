@@ -3,9 +3,11 @@ package com.example.yusufsy_3tib
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.yusufsy_3tib.databinding.ActivityDetailBinding
+import com.google.android.material.tabs.TabLayoutMediator
 
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
@@ -27,20 +29,42 @@ class DetailActivity : AppCompatActivity() {
         // Setup Toolbar dan fungsi tombol Back secara langsung (String Resource)
         binding.toolbarDetail.title = getString(R.string.title_detail_destinasi)
         binding.toolbarDetail.setNavigationOnClickListener {
-            finish() // Menutup halaman ini dan kembali ke halaman sebelumnya
+            finish()
         }
 
         // Menangkap data dari Intent (String Resource Fallback)
         val nama = intent.getStringExtra("EXTRA_NAMA") ?: getString(R.string.default_destinasi_wisata)
-        val deskripsi = intent.getStringExtra("EXTRA_DESKRIPSI") ?: getString(R.string.default_deskripsi_kosong)
         val imageResId = intent.getIntExtra("EXTRA_GAMBAR", 0)
 
-        // Memasang data ke komponen UI
+        // Memasang nama dan gambar ke komponen UI atas
         binding.tvNamaDetail.text = nama
-        binding.tvDeskripsiDetail.text = deskripsi
-
         if (imageResId != 0) {
             binding.imgDetail.setImageResource(imageResId)
         }
+
+        // Menghitung jumlah ulasan untuk ditampilkan di Badge Tab Ulasan
+        val jumlahUlasan = (dataUlasanDestinasi[nama] ?: ulasanDefault).size
+
+        // 1. Inisialisasi adapter Tab (Pertemuan 10)
+        val tabsAdapter = DetailTabsAdapter(this)
+
+        // 2. Pasang adapter ke ViewPager2
+        binding.viewPager.adapter = tabsAdapter
+
+        // 3. Hubungkan TabLayout dan ViewPager2 dengan TabLayoutMediator
+        TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
+            when (position) {
+                0 -> {
+                    tab.text = getString(R.string.tab_informasi)
+                }
+                1 -> {
+                    tab.text = getString(R.string.tab_ulasan)
+                    // Menambahkan badge angka sesuai jumlah ulasan (Tahap 2.1 Modul)
+                    val badge = tab.getOrCreateBadge()
+                    badge.isVisible = true
+                    badge.number = jumlahUlasan
+                }
+            }
+        }.attach()
     }
 }

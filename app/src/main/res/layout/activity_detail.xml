@@ -19,7 +19,7 @@
     <ImageView
         android:id="@+id/imgDetail"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="220dp"
         android:contentDescription="@string/default_destinasi_wisata"
         android:scaleType="centerCrop"
         app:layout_constraintTop_toBottomOf="@id/toolbarDetail" />
@@ -34,13 +34,30 @@
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/imgDetail" />
 
-    <TextView
-        android:id="@+id/tvDeskripsiDetail"
-        android:layout_width="match_parent"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:textColor="@color/nature_text_dark"
-        android:textSize="16sp"
+        android:layout_marginTop="12dp"
+        android:background="@color/cream_background"
+        app:tabMode="fixed"
+        app:tabGravity="fill"
+        app:tabTextColor="@color/nature_text_hint"
+        app:tabSelectedTextColor="@color/button"
+        app:tabIndicatorColor="@color/button"
+        app:tabIndicatorHeight="3dp"
+        app:tabIndicatorFullWidth="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvNamaDetail" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tab_layout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
