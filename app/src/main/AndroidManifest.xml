@@ -39,6 +39,10 @@
         <activity
             android:name=".tutorial.TutorialActivity"
             android:exported="false" />
+        <activity
+            android:name=".catatan.CatatanFormActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

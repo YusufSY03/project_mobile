@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
+import com.example.yusufsy_3tib.catatan.CatatanFragment
 import com.example.yusufsy_3tib.databinding.ActivityBaseBinding
 
 class BaseActivity : AppCompatActivity() {
@@ -37,6 +38,10 @@ class BaseActivity : AppCompatActivity() {
                 }
                 R.id.nav_profil -> {
                     replaceFragment(ProfilFragment())
+                    true
+                }
+                R.id.nav_catatan -> {
+                    replaceFragment(CatatanFragment())
                     true
                 }
                 else -> false

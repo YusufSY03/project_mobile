@@ -85,4 +85,19 @@
     <string name="tab_ulasan">Ulasan</string>
     <string name="label_lokasi_kategori">Kategori Wisata: %1$s</string>
     <string name="toast_klik_ulasan">Ulasan dari %1$s (%2$s)</string>
+
+    <!-- Tambahan Pertemuan 12: Room Database Catatan Perjalanan -->
+    <string name="menu_catatan">Catatan</string>
+    <string name="title_catatan">Catatan Perjalanan</string>
+    <string name="title_form_catatan">Tambah Catatan</string>
+    <string name="hint_judul_catatan">Judul Catatan</string>
+    <string name="hint_destinasi_catatan">Destinasi (mis. Jam Gadang)</string>
+    <string name="hint_isi_catatan">Isi Rencana Perjalanan</string>
+    <string name="btn_simpan_catatan">Simpan Catatan</string>
+    <string name="toast_isi_semua_kolom">Isi semua kolom!</string>
+    <string name="toast_gagal_simpan">Gagal menyimpan catatan</string>
+    <string name="dialog_hapus_judul">Hapus Catatan</string>
+    <string name="dialog_hapus_pesan">Yakin ingin menghapus catatan ini?</string>
+    <string name="btn_ya">Ya</string>
+    <string name="btn_batal">Batal</string>
 </resources>

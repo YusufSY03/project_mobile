@@ -9,6 +9,10 @@
         android:icon="@android:drawable/ic_menu_mapmode"
         android:title="@string/menu_wishlist" />
     <item
+        android:id="@+id/nav_catatan"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:title="@string/menu_catatan" />
+    <item
         android:id="@+id/nav_profil"
         android:icon="@android:drawable/ic_menu_info_details"
         android:title="@string/menu_profil" />
